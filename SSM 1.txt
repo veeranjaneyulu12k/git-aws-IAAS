@@ -1,0 +1,17 @@
+#!/bin/bash
+
+yum install nginx -y 
+systemctl enable nginx 
+systemctl start nginx
+
+echo "<h1>This traffic is from host</h1>" > /usr/share/nginx/html/index.html
+
+sudo dnf install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+
+sudo systemctl enable amazon-ssm-agent
+sudo systemctl start amazon-ssm-agent
+
+    wget https://s3.region.amazonaws.com/amazoncloudwatch-agent-region/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
+    sudo rpm -Uvh amazon-cloudwatch-agent.rpm
+    sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+    sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -s
