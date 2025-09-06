@@ -21,3 +21,7 @@ Sticky sessions (session affinity)
 target group level ---> actions ---> edit attributes ---> Target selection configuration
 
 <img width="882" height="553" alt="image" src="https://github.com/user-attachments/assets/8678f8c8-557e-47fa-8427-ace68a01c285" />
+
+**2. SSL/TLS**
+
+.An SSL certificate allows traffic b/w your clients and your load balancer to be encrypted (In-flight encryption)
