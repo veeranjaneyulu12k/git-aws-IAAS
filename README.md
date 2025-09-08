@@ -25,3 +25,18 @@ target group level ---> actions ---> edit attributes ---> Target selection confi
 **2. SSL/TLS**
 
 .An SSL certificate allows traffic b/w your clients and your load balancer to be encrypted (In-flight encryption)
+
+**3. Connection Draining**
+----------------------------
+
+Connection Draining is a feature used in AWS Elastic Load Balancing (ELB/ALB/NLB) to ensure that in-flight requests are not interrupted when an instance is deregistered or becomes unhealthy.
+
+**🔹 What it does:**
+
+When you deregister an instance from a load balancer or it becomes unhealthy:
+
+The load balancer stops sending new requests to that instance.
+
+Existing connections (in-flight requests) are allowed to finish within a specified timeout.
+
+After the timeout expires, any remaining connections are forcibly closed.
